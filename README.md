@@ -16,3 +16,4 @@ console.log(obj); //=> 4
   **object**: *object* source object  
   **in**: *array* find   
   **defaultValue**: optional default  
+  **nullable**: returns defaultvalue if nullable is set to false (default is true) and value is null  

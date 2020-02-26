@@ -1,9 +1,10 @@
-export default (obj, find, def) => {
+export default (obj, find, def, nullable = true) => {
   if (obj === null || typeof obj != 'object') return def;
-  var v = obj;
+  let v = obj;
   for (let i = 0, c = find.length; i < c; i++) {
     if (typeof v[find[i]] == 'undefined') return def;
     else v = v[find[i]];
   }
-  return v;
+  if (!nullable && v === null) return def;
+  else return v;
 };
